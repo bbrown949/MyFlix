@@ -11,7 +11,7 @@
   justify-content: flex-end;
 }
 
-.header-content {
+.home-button {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: right;
@@ -28,14 +28,14 @@
   justify-content: center;
 }
 
-.header-content2 {
+.concerts-button {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: right;
-  width: 1500px;
   color: black;
-  background-color: #9a7433;
-  margin: auto;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 5px;
 }
 
 .zip-code-box {
@@ -51,4 +51,8 @@
 .zip-code-submit {
   display: flex;
   justify-content: center;
+}
+
+.hidden {
+  display: none !important;
 }
