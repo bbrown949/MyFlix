@@ -1,7 +1,6 @@
 const $form = document.querySelector('form');
 const $homePage = document.querySelector('div[data-view="home-page"]');
 const $concertsPage = document.querySelector('div[data-view="concerts-page"]');
-// const $idTitle = document.getElementById('new-entry-edit-entry');
 const $availableShows = document.querySelector('ul');
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -14,10 +13,8 @@ $form.addEventListener('submit', function (event) {
       const concertEntryElement = renderConcerts(concertEntry);
       $availableShows.appendChild(concertEntryElement);
     }
-    // console.log('xhr response', xhr.response);
   });
   xhr.send();
-  // console.log(event.target.elements.zip.value);
 });
 
 function viewSwap(view) {
@@ -30,11 +27,6 @@ function viewSwap(view) {
     $concertsPage.classList.remove('hidden');
   }
 }
-
-// const $concertsButton = document.querySelector('.concerts-button');
-// $concertsButton.addEventListener('click', function () {
-//   viewSwap('concerts-page');
-//   $form.reset();
 
 const $zipCodeSubmit = document.querySelector('.zip-code-submit');
 $zipCodeSubmit.addEventListener('click', function () {
@@ -50,6 +42,7 @@ function renderConcerts(concerts) {
 
   const $imgLine = document.createElement('img');
   $imgLine.setAttribute('src', concerts.images[0].url);
+  $imgLine.setAttribute('alt', 'api-image');
   $li.appendChild($imgLine);
 
   const $row = document.createElement('div');
@@ -76,18 +69,6 @@ function renderConcerts(concerts) {
   $concertVenue.textContent = concerts._embedded.venues[0].name;
   $columnOne.appendChild($concertVenue);
   // trying to add save button below
-
-  // const $row = document.createElement('div');
-  // $row.setAttribute('class', 'row');
-  // $imgLine.appendChild($row);
-
-  // const $columnHalfOne = document.createElement('div');
-  // $columnHalfOne.setAttribute('class', 'column-half');
-  // $row.appendChild($columnHalfOne);
-
-  // const $columnHalfTwo = document.createElement('div');
-  // $columnHalfTwo.setAttribute('class', 'column-half');
-  // $row.appendChild($columnHalfTwo);
 
   return $li;
 }
