@@ -31,8 +31,13 @@ function viewSwap(view) {
   }
 }
 
-const $concertsButton = document.querySelector('.concerts-button');
-$concertsButton.addEventListener('click', function () {
+// const $concertsButton = document.querySelector('.concerts-button');
+// $concertsButton.addEventListener('click', function () {
+//   viewSwap('concerts-page');
+//   $form.reset();
+
+const $zipCodeSubmit = document.querySelector('.zip-code-submit');
+$zipCodeSubmit.addEventListener('click', function () {
   viewSwap('concerts-page');
   $form.reset();
 
