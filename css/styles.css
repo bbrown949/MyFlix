@@ -91,7 +91,7 @@ p {
   flex-basis: calc(100% / 3);
 }
 
-.show-data-row {
+.concert-data-row {
   padding-bottom: 20px;
 }
 
@@ -102,4 +102,18 @@ ul {
 
 .last-entries-text {
   font-size: 48px;
+}
+
+i {
+  font-size: 25px;
+  color: red;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.last-concerts-text {
+  font-size: 50px;
 }

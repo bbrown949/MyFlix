@@ -1,3 +1,4 @@
+
 const $form = document.querySelector('form');
 const $homePage = document.querySelector('div[data-view="home-page"]');
 const $concertsPage = document.querySelector('div[data-view="concerts-page"]');
@@ -13,8 +14,21 @@ $form.addEventListener('submit', function (event) {
       const concertEntryElement = renderConcerts(concertEntry);
       $availableShows.appendChild(concertEntryElement);
     }
+    const $favorite = document.querySelectorAll('i');
+    for (let k = 0; k < $favorite.length; k++) {
+      $favorite[k].addEventListener('click', function (event) {
+        event.preventDefault();
+        const singleData = {
+          concert: event.target.closest('li').getAttribute('data-concerts-id'),
+          concertId: data.nextEntryID
+        };
+        data.nextEntryId++;
+        data.entries.unshift(singleData);
+      });
+    }
   });
   xhr.send();
+  viewSwap('concerts-page');
 });
 
 function viewSwap(view) {
@@ -28,10 +42,15 @@ function viewSwap(view) {
   }
 }
 
-const $zipCodeSubmit = document.querySelector('.zip-code-submit');
-$zipCodeSubmit.addEventListener('click', function () {
+const $concertsButton = document.querySelector('.concerts-button');
+$concertsButton.addEventListener('click', function () {
   viewSwap('concerts-page');
   $form.reset();
+
+  // const $zipCodeSubmit = document.querySelector('.zip-code-submit');
+  // $zipCodeSubmit.addEventListener('click', function () {
+  //   viewSwap('concerts-page');
+  //   $form.reset();
 
 });
 
@@ -46,7 +65,7 @@ function renderConcerts(concerts) {
   $li.appendChild($imgLine);
 
   const $row = document.createElement('div');
-  $row.setAttribute('class', 'show-data-row');
+  $row.setAttribute('class', 'concert-data-row');
   $li.appendChild($row);
 
   const $columnOne = document.createElement('div');
@@ -68,7 +87,10 @@ function renderConcerts(concerts) {
   const $concertVenue = document.createElement('p');
   $concertVenue.textContent = concerts._embedded.venues[0].name;
   $columnOne.appendChild($concertVenue);
-  // trying to add save button below
 
+  const $iconElement = document.createElement('i');
+  $iconElement.className = 'fa-solid fa-heart';
+  $columnOne.appendChild($iconElement);
+  // trying to add save button below
   return $li;
 }
