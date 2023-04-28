@@ -47,11 +47,6 @@ $concertsButton.addEventListener('click', function () {
   viewSwap('concerts-page');
   $form.reset();
 
-  // const $zipCodeSubmit = document.querySelector('.zip-code-submit');
-  // $zipCodeSubmit.addEventListener('click', function () {
-  //   viewSwap('concerts-page');
-  //   $form.reset();
-
 });
 
 function renderConcerts(concerts) {
@@ -91,6 +86,5 @@ function renderConcerts(concerts) {
   const $iconElement = document.createElement('i');
   $iconElement.className = 'fa-solid fa-heart';
   $columnOne.appendChild($iconElement);
-  // trying to add save button below
   return $li;
 }
