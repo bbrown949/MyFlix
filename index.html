@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -40,14 +43,25 @@
 
     <div data-view="concerts-page" class="hidden">
       <div class="row">
-        <div class="entries-navigation column-full">
-          <h2 class="last-entries-text">Concerts</h2>
+        <div class="concers-navigation column-full">
+          <h2 class="last-concerts-text">Concerts</h2>
         </div>
       </div>
       <p class="no-entries hidden">No concerts are available</p>
       <ul id="available"></ul>
 
     </div>
+
+    <!-- <div data-view="my-concerts-page" class="hidden">
+      <div class="row">
+        <div class="concers-navigation column-full">
+          <h2 class="last-concerts-text">Concerts</h2>
+        </div>
+      </div>
+      <p class="no-entries hidden">No concerts are available</p>
+      <ul id="my-concerts"></ul>
+
+    </div> -->
 
   </main>
   <script src="js/data.js"></script>
