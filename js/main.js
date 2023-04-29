@@ -24,6 +24,13 @@ $form.addEventListener('submit', function (event) {
         };
         data.nextEntryId++;
         data.entries.unshift(singleData);
+
+        const $concertDataRow = document.querySelector('.concert-data-row');
+        $concertDataRow.addEventListener('click', function (event) {
+          if (event.target === singleData) {
+            event.target = 'fa-redheart';
+          }
+        });
       });
     }
   });
@@ -85,6 +92,7 @@ function renderConcerts(concerts) {
 
   const $iconElement = document.createElement('i');
   $iconElement.className = 'fa-solid fa-heart';
+
   $columnOne.appendChild($iconElement);
   return $li;
 }
