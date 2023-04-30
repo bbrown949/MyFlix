@@ -13,18 +13,6 @@ $form.addEventListener('submit', function (event) {
       const concertEntryElement = renderConcerts(concertEntry);
       $availableShows.appendChild(concertEntryElement);
     }
-    const $favorite = document.querySelectorAll('i');
-    for (let k = 0; k < $favorite.length; k++) {
-      $favorite[k].addEventListener('click', function (event) {
-        event.preventDefault();
-        const singleData = {
-          concert: event.target.closest('li').getAttribute('data-concerts-id'),
-          concertId: data.nextEntryID
-        };
-        data.nextEntryId++;
-        data.entries.unshift(singleData);
-      });
-    }
   });
   xhr.send();
   viewSwap('concerts-page');

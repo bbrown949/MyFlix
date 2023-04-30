@@ -113,9 +113,10 @@ i {
   cursor: pointer;
 }
 
-/* i:hover {
+i:hover {
   color: red;
-} */
+  transition: transform 0.25s ease;
+}
 
 .last-concerts-text {
   font-size: 50px;
