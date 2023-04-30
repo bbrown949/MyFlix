@@ -1,4 +1,3 @@
-
 const $form = document.querySelector('form');
 const $homePage = document.querySelector('div[data-view="home-page"]');
 const $concertsPage = document.querySelector('div[data-view="concerts-page"]');
@@ -24,18 +23,25 @@ $form.addEventListener('submit', function (event) {
         };
         data.nextEntryId++;
         data.entries.unshift(singleData);
-
-        const $concertDataRow = document.querySelector('.concert-data-row');
-        $concertDataRow.addEventListener('click', function (event) {
-          if (event.target === singleData) {
-            event.target = 'fa-redheart';
-          }
-        });
       });
     }
   });
   xhr.send();
   viewSwap('concerts-page');
+});
+
+// shawn method below
+$availableShows.addEventListener('click', function (event) {
+  if (event.target.tagName !== 'I') {
+    return;
+  }
+  const $closestLi = event.target.closest('li');
+  const favorite = {};
+  favorite.concertId = $closestLi.getAttribute('data-concerts-id');
+  if (!data.entries.some(concert => concert.concertId === favorite.concertId)) {
+    data.entries.unshift(favorite);
+    event.target.className = 'fa-solid fa-heart fa-redheart';
+  }
 });
 
 function viewSwap(view) {
@@ -53,7 +59,12 @@ const $concertsButton = document.querySelector('.concerts-button');
 $concertsButton.addEventListener('click', function () {
   viewSwap('concerts-page');
   $form.reset();
+});
 
+const $homeButton = document.querySelector('.home-button');
+$homeButton.addEventListener('click', function () {
+  viewSwap('home-page');
+  $form.reset();
 });
 
 function renderConcerts(concerts) {

@@ -113,9 +113,9 @@ i {
   cursor: pointer;
 }
 
-i:hover {
+/* i:hover {
   color: red;
-}
+} */
 
 .last-concerts-text {
   font-size: 50px;
