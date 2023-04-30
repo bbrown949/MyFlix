@@ -111,11 +111,11 @@ i {
   padding-right: 10px;
   padding-bottom: 10px;
   cursor: pointer;
+  transition: transform 0.25s ease;
 }
 
 i:hover {
   color: red;
-  transition: transform 0.25s ease;
 }
 
 .last-concerts-text {
