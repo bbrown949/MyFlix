@@ -1,4 +1,3 @@
-
 const $form = document.querySelector('form');
 const $homePage = document.querySelector('div[data-view="home-page"]');
 const $concertsPage = document.querySelector('div[data-view="concerts-page"]');
@@ -14,21 +13,23 @@ $form.addEventListener('submit', function (event) {
       const concertEntryElement = renderConcerts(concertEntry);
       $availableShows.appendChild(concertEntryElement);
     }
-    const $favorite = document.querySelectorAll('i');
-    for (let k = 0; k < $favorite.length; k++) {
-      $favorite[k].addEventListener('click', function (event) {
-        event.preventDefault();
-        const singleData = {
-          concert: event.target.closest('li').getAttribute('data-concerts-id'),
-          concertId: data.nextEntryID
-        };
-        data.nextEntryId++;
-        data.entries.unshift(singleData);
-      });
-    }
   });
   xhr.send();
   viewSwap('concerts-page');
+});
+
+// shawn method below
+$availableShows.addEventListener('click', function (event) {
+  if (event.target.tagName !== 'I') {
+    return;
+  }
+  const $closestLi = event.target.closest('li');
+  const favorite = {};
+  favorite.concertId = $closestLi.getAttribute('data-concerts-id');
+  if (!data.entries.some(concert => concert.concertId === favorite.concertId)) {
+    data.entries.unshift(favorite);
+    event.target.className = 'fa-solid fa-heart fa-redheart';
+  }
 });
 
 function viewSwap(view) {
@@ -46,12 +47,12 @@ const $concertsButton = document.querySelector('.concerts-button');
 $concertsButton.addEventListener('click', function () {
   viewSwap('concerts-page');
   $form.reset();
+});
 
-  // const $zipCodeSubmit = document.querySelector('.zip-code-submit');
-  // $zipCodeSubmit.addEventListener('click', function () {
-  //   viewSwap('concerts-page');
-  //   $form.reset();
-
+const $homeButton = document.querySelector('.home-button');
+$homeButton.addEventListener('click', function () {
+  viewSwap('home-page');
+  $form.reset();
 });
 
 function renderConcerts(concerts) {
@@ -90,7 +91,7 @@ function renderConcerts(concerts) {
 
   const $iconElement = document.createElement('i');
   $iconElement.className = 'fa-solid fa-heart';
+
   $columnOne.appendChild($iconElement);
-  // trying to add save button below
   return $li;
 }

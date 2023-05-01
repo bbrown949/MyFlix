@@ -1,4 +1,4 @@
-/* exported data */
+// /* exported data */
 let data = {
   view: 'home-page',
   entries: [],
