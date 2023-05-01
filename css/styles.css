@@ -113,11 +113,6 @@ i {
   cursor: pointer;
 }
 
-i:active {
-  transform: scale(2);
-  transition: transform 0.25s ease;
-}
-
 i:hover {
   color: red;
 }
