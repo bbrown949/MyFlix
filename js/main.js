@@ -1,7 +1,10 @@
 const $form = document.querySelector('form');
 const $homePage = document.querySelector('div[data-view="home-page"]');
 const $concertsPage = document.querySelector('div[data-view="concerts-page"]');
-const $availableShows = document.querySelector('ul');
+const $myConcertsPage = document.querySelector('div[data-view="my-concerts-page"]');
+const $availableShows = document.querySelector('#available');
+const $myConcertsUl = document.querySelector('#myConcerts');
+
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
   const xhr = new XMLHttpRequest();
@@ -12,6 +15,7 @@ $form.addEventListener('submit', function (event) {
       const concertEntry = xhr.response._embedded.events[i];
       const concertEntryElement = renderConcerts(concertEntry);
       $availableShows.appendChild(concertEntryElement);
+      data.search.push(concertEntry);
     }
   });
   xhr.send();
@@ -30,6 +34,10 @@ $availableShows.addEventListener('click', function (event) {
     data.entries.unshift(favorite);
     event.target.className = 'fa-solid fa-heart fa-redheart';
   }
+
+  const $liClone = $closestLi.cloneNode(true);
+  $myConcertsUl.appendChild($liClone);
+
 });
 
 function viewSwap(view) {
@@ -37,15 +45,19 @@ function viewSwap(view) {
   if (view === 'home-page') {
     $homePage.classList.remove('hidden');
     $concertsPage.classList.add('hidden');
+    $myConcertsPage.classList.add('hidden');
   } else if (view === 'concerts-page') {
     $homePage.classList.add('hidden');
     $concertsPage.classList.remove('hidden');
+    $myConcertsPage.classList.add('hidden');
   }
 }
 
-const $concertsButton = document.querySelector('.concerts-button');
-$concertsButton.addEventListener('click', function () {
-  viewSwap('concerts-page');
+const $myConcertsButton = document.querySelector('.concerts-button');
+$myConcertsButton.addEventListener('click', function () {
+  $homePage.classList.add('hidden');
+  $concertsPage.classList.add('hidden');
+  $myConcertsPage.classList.remove('hidden');
   $form.reset();
 });
 
@@ -55,8 +67,13 @@ $homeButton.addEventListener('click', function () {
   $form.reset();
 });
 
-function renderConcerts(concerts) {
+const $backToConcertsButton = document.querySelector('.back-to-concerts');
+$backToConcertsButton.addEventListener('click', function () {
+  viewSwap('concerts-page');
+  $form.reset();
+});
 
+function renderConcerts(concerts) {
   const $li = document.createElement('li');
   $li.setAttribute('data-concerts-id', concerts.id);
 
@@ -93,5 +110,6 @@ function renderConcerts(concerts) {
   $iconElement.className = 'fa-solid fa-heart';
 
   $columnOne.appendChild($iconElement);
+
   return $li;
 }

@@ -1,7 +1,8 @@
-// /* exported data */
+// // // /* exported data */
 let data = {
   view: 'home-page',
   entries: [],
+  search: [],
   editing: null,
   nextEntryId: 1
 };

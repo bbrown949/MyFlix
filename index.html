@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,8 +22,12 @@
     <div id="container">
       <div class="row">
         <div class="header-column">
-          <h2 id="home" class="home-button">Home</h2>
-          <h2 id="concerts" class="concerts-button">My Concerts</h2>
+          <h2 id="home" class="home-button">Home |</h2>
+          <h2 id="concerts" class="concerts-button">My Concerts |</h2>
+          <h2 class="back-to-concerts">Available Concerts</h2>
+
+
+
         </div>
       </div>
   </header>
@@ -45,12 +52,21 @@
 
     <div data-view="concerts-page" class="hidden">
       <div class="row">
-        <div class="concers-navigation column-full">
+        <div class="concerts-navigation column-full">
           <h2 class="last-concerts-text">Concerts</h2>
         </div>
       </div>
-      <p class="no-entries hidden">No concerts are available</p>
       <ul id="available"></ul>
+    </div>
+
+    <div data-view="my-concerts-page" class="hidden">
+      <div class="row">
+        <div class="concerts-navigation column-full">
+
+          <h2 class="last-concerts-text"> My Concerts</h2>
+        </div>
+      </div>
+      <ul id="myConcerts"></ul>
 
     </div>
 
