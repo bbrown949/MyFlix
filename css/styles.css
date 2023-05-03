@@ -11,17 +11,6 @@ img {
   align-items: center;
 }
 
-p {
-  display: flex;
-  align-items: center;
-  color: white;
-  font-size: 16px;
-  font-weight: bolder;
-  padding-right: 10px;
-  padding-left: 5px;
-  text-shadow: 1px 1px 2px black;
-}
-
 .header-column {
   display: flex;
   height: 50px;
@@ -74,7 +63,7 @@ p {
 .column-one {
   display: flex;
   justify-content: center;
-  height: 50px;
+  height: 80px;
   background-color: #de9a3e;
   margin: auto;
   width: 100%;
@@ -92,20 +81,6 @@ ul {
 
 .last-entries-text {
   font-size: 48px;
-}
-
-i {
-  font-size: 25px;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-i:hover {
-  transform: scale(1.1);
 }
 
 .last-concerts-text {
@@ -157,4 +132,30 @@ i:hover {
   font-family: "RocknRoll One", sans-serif;
   word-spacing: 0;
   cursor: pointer;
+}
+
+p {
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  padding-right: 10px;
+  padding-left: 5px;
+  text-shadow: 1px 1px 2px black;
+}
+
+i {
+  font-size: 25px;
+  padding-left: 5px;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+i:hover {
+  transform: scale(1.1);
 }
