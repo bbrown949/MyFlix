@@ -36,8 +36,51 @@ $availableShows.addEventListener('click', function (event) {
   }
 
   const $liClone = $closestLi.cloneNode(true);
+  $liClone.setAttribute('data-concert-id', 'concert.concertId');
   $myConcertsUl.appendChild($liClone);
 
+  const $editSectionDiv = document.createElement('div');
+  $editSectionDiv.setAttribute('class', 'edit-section');
+  $liClone.appendChild($editSectionDiv);
+
+  const $editForm = document.createElement('form');
+  $editForm.setAttribute('class', 'edit-form');
+  $editSectionDiv.appendChild($editForm);
+
+  const $notes = document.createElement('textarea');
+  $notes.setAttribute('rows', '7');
+  $notes.setAttribute('cols', '30');
+  $notes.setAttribute('placeholder', 'Notes');
+  $editForm.appendChild($notes);
+
+  const $saveButtonDiv = document.createElement('div');
+  $saveButtonDiv.setAttribute('class', 'save-button-div');
+  $editSectionDiv.appendChild($saveButtonDiv);
+
+  const $saveButton = document.createElement('input');
+  $saveButton.setAttribute('type', 'submit');
+  $saveButton.setAttribute('value', 'Save');
+  $saveButton.setAttribute('class', 'save-button');
+  $editSectionDiv.appendChild($saveButton);
+
+  const $pencilElement = document.createElement('i');
+  $pencilElement.className = 'fa-solid fa-pencil';
+  $editSectionDiv.appendChild($pencilElement);
+
+  // edit notes code
+  $myConcertsUl.addEventListener('click', function (event) {
+    const $closestLi = event.target.closest('li');
+    if (!event.target.matches('i')) {
+      return null;
+    } else {
+      for (let i = 0; i < data.entries.length; i++) {
+        if (Number($closestLi.getAttribute('data-entry-id')) === data.entries[i].entryId) {
+          data.editing = data.entries[i];
+        }
+        $editForm.elements.notes.value = data.editing.notes;
+      }
+    }
+  });
 });
 
 function viewSwap(view) {
@@ -107,9 +150,17 @@ function renderConcerts(concerts) {
   $columnOne.appendChild($concertVenue);
 
   const $iconElement = document.createElement('i');
+  $iconElement.setAttribute('class', 'icon-element');
   $iconElement.className = 'fa-solid fa-heart';
-
   $columnOne.appendChild($iconElement);
+
+  // const $pencilContainer = document.createElement('div');
+  // $pencilContainer.className = 'pencil-icon-container';
+  // $columnOne.appendChild($pencilContainer);
+
+  // const $pencilElement = document.createElement('i');
+  // $pencilElement.className = 'fa fa - pencil edit - icon';
+  // $pencilContainer.appendChild($pencilElement);
 
   return $li;
 }

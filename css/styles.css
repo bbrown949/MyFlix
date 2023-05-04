@@ -28,7 +28,6 @@ img {
 }
 
 .column-full {
-  padding-top: 50px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -39,6 +38,7 @@ img {
 }
 
 .home-page-logo {
+  padding-top: 50px;
   font-size: 48px;
   font-weight: bolder;
   text-shadow: 1px 1px 2px #9a7433;
@@ -71,7 +71,7 @@ img {
 }
 
 .concert-data-row {
-  padding-bottom: 20px;
+  padding-bottom: 0;
 }
 
 ul {
@@ -158,4 +158,41 @@ i {
 
 i:hover {
   transform: scale(1.1);
+}
+
+/* position: relative;
+  float: right; */
+
+textarea {
+  padding-right: 10px;
+}
+
+.edit-section {
+  display: flex;
+  padding-right: 50px;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.save-button {
+  padding-left: 5px;
+  max-height: 30px;
+  max-width: 50px;
+  background-color: #de9a3e;
+  color: black;
+  font-weight: bold;
+  font-family: "RocknRoll One", sans-serif;
+  cursor: pointer;
+}
+
+/* textarea {
+  width: 100%;
+} */
+
+.fa-pencil {
+  padding-left: 15px;
+  color: white;
+  size: 20px;
+  width: 50px;
+  height: 35px;
 }
