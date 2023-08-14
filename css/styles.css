@@ -1,161 +1,364 @@
-.row {
-  width: 100%;
+body {
+  min-height: 100%;
+  padding: 0;
   margin: 0;
 }
 
-img {
-  max-width: 500px;
-  display: flex;
-  margin: auto;
-  width: 100%;
-  align-items: center;
+.header-background {
+  background-color: #6c757d;
+  padding: 0.3rem 0;
 }
 
-.header-column {
-  display: flex;
-  height: 50px;
-  background-color: #9a7433;
-  align-items: center;
-  justify-content: flex-end;
+.logo {
+  color: #dd295f;
 }
 
-.header-column2 {
-  display: flex;
-  height: 50px;
-  background-color: #9a7433;
-  align-items: center;
-  justify-content: flex-end;
+.header-home {
+  color: white;
+  padding: 0.8rem 0;
+  border-style: solid;
+  border-radius: 5px;
+  margin: auto 1rem;
+  width: 80px;
 }
 
-.column-full {
-  padding-top: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+a {
+  text-decoration: none;
 }
 
-.zip-code-box {
-  display: flex;
-}
-
-.home-page-logo {
-  font-size: 48px;
-  font-weight: bolder;
-  text-shadow: 1px 1px 2px #9a7433;
-  font-family: "RocknRoll One", sans-serif;
-}
-
-.zip-code-submit {
-  display: flex;
-  justify-content: center;
+a:hover,
+button:hover {
   cursor: pointer;
 }
 
-.hidden {
-  display: none !important;
+.main-background {
+  background-color: #d9d1d1;
+  min-height: 87.8vh;
+  height: 100%;
 }
 
-#available {
-  margin: auto;
+.detail-background {
+  background-color: #d9d1d1;
+  height: 70vh;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem;
+}
+
+img {
   width: 100%;
+  height: 100%;
 }
 
-.column-one {
-  display: flex;
-  justify-content: center;
-  height: 80px;
-  background-color: #de9a3e;
-  margin: auto;
-  width: 100%;
-  flex-basis: calc(100% / 3);
-}
-
-.concert-data-row {
-  padding-bottom: 20px;
+.brief-description {
+  margin-top: 0;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 ul {
-  width: 100%;
+  margin: auto;
   padding: 0;
 }
 
-.last-entries-text {
-  font-size: 48px;
+li {
+  padding: 0 0.8rem;
+  list-style: none;
+  margin-bottom: 2rem;
 }
 
-.last-concerts-text {
-  font-size: 50px;
-  font-family: "RocknRoll One", sans-serif;
+h6,
+p {
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+  color: black;
+  width: 50%;
 }
 
-.fa-redheart {
+.detailed-image {
+  height: 90%;
+  width: 100%;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  line-height: 0;
+}
+
+.brief-image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.image-container {
+  object-fit: cover;
+  height: 100%;
+  line-height: 0;
+}
+
+.detailed-image-container {
+  object-fit: cover;
+  height: 600px;
+  margin-top: 0.6rem;
+}
+
+.detail-container {
+  margin: 0;
+  padding-top: 1rem;
+  text-align: right;
+}
+
+.detailed-box {
+  background-color: white;
+  height: 310px;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.add-to-list {
+  background-color: #d6b258;
+  border: 1px solid #d6b258;
+  height: 2rem;
+  color: white;
+  border-radius: 5px;
+}
+
+.detailed-box-plot {
+  background-color: white;
+  height: 200px;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-family: Voltaire, sans-serif;
+  color: #6c757d;
+  padding: 5rem auto;
+  margin: 1rem auto;
+  font-weight: 800;
+}
+
+.detailed-text {
+  margin: 1.2rem auto 1rem;
+}
+
+.detailed-description {
+  font-weight: lighter;
+  color: #6c757d;
+}
+
+.description-box {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.adding-btn-popup-container {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 450px;
+  padding: 2rem 0;
+  background-color: #c4c4c4;
+  border-radius: 5px;
+}
+
+.popup-confirm-btn {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, 0);
+}
+
+.yellow-background {
+  background-color: #d6b258;
+}
+
+.red-background {
+  background-color: #ff2e00;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+  text-align: end;
+  width: 94%;
+}
+
+h2,
+h1 {
+  margin-top: 0;
+  color: white;
+}
+
+.watch-list-title {
+  padding-top: 1rem;
+}
+
+.brief-container {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 3px 10px 0 rgb(0, 0, 0, 40%);
+  border-radius: 10px;
+}
+
+.delete-button {
+  position: absolute;
+  bottom: 0.5%;
+  margin: 0 0 0 0.5rem;
+  padding: 0 0 0.5rem;
+  z-index: 2;
+}
+
+.delete {
   color: red;
 }
 
-.back-button {
-  text-align: right;
+.delete-confirm-background {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(32, 32, 32, 0.86);
+  position: absolute;
+  top: 0;
+  z-index: 2;
 }
 
-.home-button {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: right;
-  color: black;
-  font-size: 16px;
-  padding-left: 10px;
-  padding-right: 5px;
-  font-family: "RocknRoll One", sans-serif;
-  cursor: pointer;
+.delete-popup-box {
+  position: fixed;
+  z-index: 3;
+  width: 60%;
+  background-color: #c4c4c4;
+  height: 400px;
+  border-radius: 5px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.concerts-button {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: right;
-  color: black;
-  font-size: 16px;
-  padding-left: 10px;
-  padding-right: 5px;
-  font-family: "RocknRoll One", sans-serif;
-  word-spacing: 0;
-  cursor: pointer;
+.delete-popup-text {
+  font-size: 2rem;
+  padding-top: 6rem;
+  font-weight: lighter;
 }
 
-.back-to-concerts {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: right;
-  color: black;
-  font-size: 16px;
-  padding-left: 10px;
-  padding-right: 9px;
-  font-family: "RocknRoll One", sans-serif;
-  word-spacing: 0;
-  cursor: pointer;
+.delete-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.delete-button-style {
+  background-color: black;
+  color: white;
+  width: 100px;
+  padding: 0.8rem 0;
+  font-family: Ribeye, sans-serif;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin: auto;
+}
+
+.brief-title {
+  padding-top: 1rem;
 }
 
 p {
-  line-height: 24px;
+  width: 100%;
+}
+
+.lds-hourglass {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  top: 50%;
+}
+
+.lds-hourglass::after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+.offline {
+  position: absolute;
+  width: 60%;
+  background-color: white;
+  height: 200px;
+  border-radius: 5px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.offline-text {
   display: flex;
+  justify-content: center;
   align-items: center;
+  margin: auto;
+  height: 100%;
+  width: 80%;
+}
+
+.offline-button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-70%, 0);
+  border-radius: 8px;
+  border: 1px solid black;
   color: white;
-  font-size: 16px;
-  font-weight: bolder;
-  padding-right: 10px;
-  padding-left: 5px;
-  text-shadow: 1px 1px 2px black;
+  background-color: black;
 }
 
-i {
-  font-size: 25px;
-  padding-left: 5px;
-  padding-top: 20px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-i:hover {
-  transform: scale(1.1);
+.logo-image {
+  width: 55px;
+  margin: auto 0;
+  padding: auto 0;
 }

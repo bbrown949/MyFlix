@@ -4,75 +4,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJAX Project</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" href="images/favicon.ico">
+  <title>moviewer</title>
+  <meta name="description" content="A web application for movie lovers who want to see and save upcoming movies.">
+  <meta property="og:url" content="https://chang-yoo.github.io/moviewer/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="moviewer">
+  <meta property="og:description" content="A web application for movie lovers who want to see and save upcoming movies.">
+  <meta property="og:image" content="https://chang-yoo.github.io/moviewer/favicon_io/android-chrome-512x512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="chang-yoo.github.io">
+  <meta property="twitter:url" content="https://chang-yoo.github.io/moviewer/">
+  <meta name="twitter:title" content="moviewer">
+  <meta name="twitter:description" content="A web application for movie lovers who want to see and save upcoming movies.">
+  <meta name="twitter:image" content="https://chang-yoo.github.io/moviewer/favicon_io/android-chrome-512x512.png">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Yellowtail&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon_io/favicon-16x16.png">
 </head>
 
 <body>
+  <div class="offline hidden">
+    <p class="offline-text">Sorry, there was an error connecting to the network! Please check your internet connection and try again.</p>
+    <button class="offline-button">Okay!</button>
+  </div>
+  <div class="spinner hidden">
+    <div class="lds-hourglass"></div>
+  </div>
   <header>
-    <div id="container">
-      <div class="row">
-        <div class="header-column">
-          <h2 id="home" class="home-button">Home |</h2>
-          <h2 id="concerts" class="concerts-button">My Concerts |</h2>
-          <h2 class="back-to-concerts">Available Concerts</h2>
-
-
-
-        </div>
-      </div>
-  </header>
-  <main class="container">
-    <div data-view="home-page">
-      <div class="row">
-        <div class="column-full">
-          <h1 class="home-page-logo">Concert Buddy</h1>
+    <div class="column-full header-background">
+      <div class="rows container baseline">
+        <div class="row">
+          <img class="logo-image" src="images/apple-touch-icon.png">
+          <h1 class="logo">MeFlix</h1>
         </div>
         <div class="row">
-          <div class="column-full">
-            <div class="zip-code-box">
-              <form>
-                <input id="zip" class="zip-code-box" name="zip" type="text" value="" placeholder="Enter Zip Code">
-                <input class="zip-code-submit" value="submit" type="submit">
-              </form>
+          <button class="header-home red-background">HOME</button>
+          <button class="header-home yellow-background">Watch List</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-background">
+      <div class="container">
+        <div class="list-box">
+          <div class="list-text text-align-center">
+            <h1 class="bottom-4">Coming Soon!</h1>
+          </div>
+          <div class="list-container column-full">
+            <ul class="row list">
+            </ul>
+          </div>
+        </div>
+        <div class="watch-list-container column-full hidden">
+          <div class="watch-list-box text-align-center">
+            <div class="watch-list-title">
+              <h2>WATCH LIST</h2>
             </div>
+            <div>
+              <h1 class="watch-list-text">Your watch list is currently empty!</h1>
+            </div>
+          </div>
+          <div>
+            <ul class="row watch-list">
+            </ul>
+          </div>
+        </div>
+        <div class="detail-container hidden">
+          <button class="add-to-list watch-list-button add-to-list-width">
+            Add To Watch List
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="adding-btn-popup-container column-full hidden">
+      <h2 class="text-align-center">Added to watch list!</h2>
+      <button class="popup-confirm-btn">Perfect</button>
+    </div>
+    <div class="delete-confirm-background hidden">
+      <div class="delete-popup-box">
+        <div class="container">
+          <div class="delete-popup-text text-align-center">
+            <h3>Do you want to delete this movie from your list?</h3>
+          </div>
+          <div class="delete-buttons">
+            <button class="delete-button-style delete-yes">Delete!</button>
+            <button class="delete-button-style delete-no">No!</button>
           </div>
         </div>
       </div>
     </div>
-
-    <div data-view="concerts-page" class="hidden">
-      <div class="row">
-        <div class="concerts-navigation column-full">
-          <h2 class="last-concerts-text">Concerts</h2>
-        </div>
-      </div>
-      <ul id="available"></ul>
-    </div>
-
-    <div data-view="my-concerts-page" class="hidden">
-      <div class="row">
-        <div class="concerts-navigation column-full">
-
-          <h2 class="last-concerts-text"> My Concerts</h2>
-        </div>
-      </div>
-      <ul id="myConcerts"></ul>
-
-    </div>
-
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>

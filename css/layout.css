@@ -1,22 +1,145 @@
-#container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
 body {
-  background-image: url("../images/concert.png");
-  background-size: 950px;
-}
-
-main {
   width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Voltaire, sans-serif;
 }
 
-@media screen and (min-width: 768px) {
-  width: 100%;
+.container {
+  width: 90%;
+  margin: auto;
 }
 
-form {
+.row {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.column-half {
+  width: 50%;
+}
+
+.column-one-third {
+  width: calc(100% / 3);
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.bottom-4 {
+  margin-bottom: 4%;
+}
+
+@media only screen and (max-width: 600px) {
+  li {
+    width: 100%;
+  }
+
+  .column-half {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .header-home {
+    margin: auto 0;
+  }
+
+  .detailed-image-container {
+    width: 100%;
+  }
+
+  h3,
+  p {
+    font-size: 0.8rem;
+  }
+
+  .rows {
+    display: block;
+    text-align: center;
+  }
+
+  .add-to-list-width {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  li {
+    width: 50%;
+  }
+
+  .column-half {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .detailed-image-container {
+    width: 100%;
+  }
+
+  .rows {
+    display: flex;
+  }
+
+  .add-to-list-width {
+    width: 20%;
+  }
+
+  .watch-list-button {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  li {
+    width: 25%;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .column-half {
+    width: 50%;
+  }
+
+  .detailed-image-container {
+    width: 40%;
+  }
+
+  .rows {
+    display: flex;
+  }
+
+  .add-to-list-width {
+    width: 13%;
+  }
+
+  .watch-list-button {
+    margin-right: 3.3rem;
+  }
 }
