@@ -205,11 +205,22 @@ h5 {
 h2,
 h1 {
   margin-top: 0;
-  color: white;
+  color: red;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.main-logo {
+  color: red;
+  text-shadow: 2px 2px 2px black;
+}
+
+.coming-soon {
+  color: black;
 }
 
 .watch-list-title {
   padding-top: 1rem;
+  color: red;
 }
 
 .brief-container {
